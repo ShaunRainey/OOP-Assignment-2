@@ -2,6 +2,7 @@
 #define MAINLOOPFUNCTIONS_H
 
 #include <string>
+#include "../AircraftComponent/AircraftComponent.h"
 
 using namespace std;
 
@@ -11,12 +12,12 @@ public:
 
 	static void sayHello()
 	{
-		cout << "Hello" << endl;
+		cout << "\n Hello" << endl;
 	};
 
 	static void presentMenu()
 	{
-		cout << "Please select an option from the menu (0 to quit program): " << endl;
+		cout << "\nPlease select an option from the menu (0 to quit program): " << endl;
 		cout << "1) A" << endl;
 		cout << "2) B" << endl;
 		cout << "3) C" << endl;
@@ -35,11 +36,19 @@ public:
 
 		catch (...)
 		{
-			cout << "Choice not valid, please try again." << endl;
+			cout << "\nChoice not valid, please try again." << endl;
 		}
 
 		return isValid;
 	}
+
+	static void viewComponent(const unique_ptr<AircraftComponent>& component)
+	{
+		component->displayInfo();
+	}
+
+
+
 };
 
 #endif

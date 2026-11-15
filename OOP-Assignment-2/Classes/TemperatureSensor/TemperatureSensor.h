@@ -11,9 +11,14 @@ class TemperatureSensor : public AircraftComponent
 public:
     TemperatureSensor(string id, string name, double minTemp, double maxTemp);
 
-    void getReading() override;
+    void generateReading() override;
     bool checkReading() const override;
-    string getReadingDescription() const override;
+    string getReading() const override;
+    void displayInfo() const override;
+    double getMaxTemp() const;
+    double getMinTemp() const;
+    void setMinTemp();
+
 
 private:
     double minTemperature;

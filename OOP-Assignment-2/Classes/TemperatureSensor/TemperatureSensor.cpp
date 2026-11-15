@@ -9,8 +9,8 @@ TemperatureSensor::TemperatureSensor(string id, string name, double minTemp, dou
 {
     minTemperature = minTemp;
     maxTemperature = maxTemp;
-    currentTemperature = 0;
-    hasReading = false;
+    currentTemperature = 20;
+    hasReading = true;
 
     if (minTemperature >= maxTemperature)
     {
@@ -20,7 +20,7 @@ TemperatureSensor::TemperatureSensor(string id, string name, double minTemp, dou
     cout << "Temperature sensor created!" << endl;
 }
 
-void TemperatureSensor::getReading()
+void TemperatureSensor::generateReading()
 {
     cout << "\nPlease enter current temperature (Celcius): ";
     cin >> currentTemperature;
@@ -37,11 +37,46 @@ bool TemperatureSensor::checkReading() const
     return currentTemperature >= minTemperature && currentTemperature <= maxTemperature;
 }
 
-string TemperatureSensor::getReadingDescription() const
+string TemperatureSensor::getReading() const
 {
     if (!hasReading)
     {
         return "No valid reading currently held";
     }
     return to_string(currentTemperature);
+}
+
+double TemperatureSensor::getMaxTemp() const
+{
+    return maxTemperature;
+}
+
+double TemperatureSensor::getMinTemp() const
+{
+    return minTemperature;
+}
+
+void TemperatureSensor::setMinTemp()
+{
+    double newTemp;
+    cout << "Enter a new value: ";
+    cin >> newTemp;
+
+    if (newTemp > maxTemperature) {
+        cout << "\nMinimum temperature cannot be higher than the max permitted temperature.\n";
+    }
+    else
+    {
+        minTemperature = newTemp;
+    }
+}
+
+void TemperatureSensor::displayInfo() const
+{
+    cout << "\nComponent ID: " << getComponentID();
+    cout << "\nComponentName: " << getComponentName();
+    cout << "\nHealth status: " << healthStatus();
+    cout << "\nCurrent reading: " << getReading();
+    cout << "\nMax permitted temperature:" << getMaxTemp();
+    cout << "\nMin permitted temperature:" << getMinTemp() << "\n";
 }

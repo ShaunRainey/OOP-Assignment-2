@@ -13,18 +13,18 @@ public:
 
     virtual ~AircraftComponent() = default;
 
-    string getComponentID();
-    string getComponentName();
+    string getComponentID() const;
+    string getComponentName() const;
 
     void setFunctioning(bool status);
     void setNeedsMaintenance(bool required);
 
-    virtual void getReading() = 0;
+    virtual void generateReading() = 0;
     virtual bool checkReading() const = 0;
-    virtual string getReadingDescription() const = 0;
+    virtual string getReading() const = 0;
+    virtual void displayInfo() const = 0;
 
     string healthStatus() const;
-    void displayInfo() const;
 
 private:
     string componentID;

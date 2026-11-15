@@ -11,9 +11,9 @@ class PressureSensor : public AircraftComponent
 public:
     PressureSensor(string id, string name, double minPres, double maxPres);
 
-    void getReading() override;
+    void generateReading() override;
     bool checkReading() const override;
-    string getReadingDescription() const override;
+    string getReading() const override;
 
 private:
     double minPressure;

@@ -11,12 +11,12 @@ AircraftComponent::AircraftComponent(string id, string name)
     needsMaintenance = false;
 }
 
-std::string AircraftComponent::getComponentID()
+std::string AircraftComponent::getComponentID() const
 {
     return componentID;
 }
 
-std::string AircraftComponent::getComponentName()
+std::string AircraftComponent::getComponentName() const
 {
     return componentName;
 }
@@ -46,11 +46,11 @@ std::string AircraftComponent::healthStatus() const
     return "Healthy";
 }
 
-void AircraftComponent::displayInfo() const
-{
-    std::cout << "Component ID: " << componentID << std::endl;
-    std::cout << "ComponentName: " << componentName << std::endl;
-    std::cout << "Health status: " << healthStatus() << std::endl;
-    std::cout << "Reading: " << getReadingDescription()
-        << ": " << checkReading() << std::endl;
-}
+//void AircraftComponent::displayInfo() const
+//{
+//    std::cout << "Component ID: " << componentID << std::endl;
+//    std::cout << "ComponentName: " << componentName << std::endl;
+//    std::cout << "Health status: " << healthStatus() << std::endl;
+//    std::cout << "Reading: " << getReadingDescription()
+//        << ": " << checkReading() << std::endl;
+//}

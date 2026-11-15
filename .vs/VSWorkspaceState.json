@@ -3,10 +3,10 @@
     "",
     "\\OOP-Assignment-2",
     "\\OOP-Assignment-2\\Classes",
-    "\\OOP-Assignment-2\\Classes\\MainLoopFunctions",
-    "\\OOP-Assignment-2\\Classes\\TemperatureSensor",
-    "\\OOP-Assignment-2\\Debug\\microsoft"
+    "\\OOP-Assignment-2\\Classes\\AircraftComponent",
+    "\\OOP-Assignment-2\\Classes\\PressureSensor",
+    "\\OOP-Assignment-2\\Classes\\TemperatureSensor"
   ],
-  "SelectedNode": "\\OOP-Assignment-2\\Classes\\TemperatureSensor\\TemperatureSensor.cpp",
+  "SelectedNode": "\\OOP-Assignment-2\\Classes\\PressureSensor\\PressureSensor.h",
   "PreviewInSolutionExplorer": false
 }

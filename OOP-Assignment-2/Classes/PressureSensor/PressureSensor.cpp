@@ -20,7 +20,7 @@ PressureSensor :: PressureSensor(string id, string name, double minPres, double 
     cout << "Pressure sensor created!" << endl;
 }
     
-void PressureSensor::getReading()
+void PressureSensor::generateReading()
 {
     cout << "\nPlease enter current pressure: ";
     cin >> currentPressure;
@@ -37,7 +37,7 @@ bool PressureSensor::checkReading() const
     return currentPressure >= minPressure && currentPressure <= maxPressure;
 }
 
-string PressureSensor::getReadingDescription() const
+string PressureSensor::getReading() const
 {
     if (!hasReading)
     {

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <unordered_map>
 #include <memory>
 #include <limits>
 #include <stdexcept>
@@ -23,11 +24,19 @@ int main()
 {
     bool exit = false;
 
+    //vector<unique_ptr<AircraftComponent>> components;
+
+    //components.push_back(make_unique<TemperatureSensor>("T001", "Temperature Sensor 1", 50, 150));
+    //components.push_back(make_unique<PressureSensor>("P001", "Pressure Sensor 1", 100, 300));
+
+    unordered_map<string, unique_ptr<AircraftComponent>> components;
+
+    components["T001"] = make_unique<TemperatureSensor>("T001", "Temperature Sensor 1", 50, 150);
+    //components["P001"] = make_unique<PressureSensor>("P001", "Pressure Sensor 1", 0, 200);
+
     while (exit == false)
     {
         string choice;
-
-        MainLoopFunctions::sayHello();
 
         MainLoopFunctions::presentMenu();
         cin >> choice;
@@ -39,21 +48,28 @@ int main()
             exit = true;
         }
 
+        int intChoice = stoi(choice);
+
+        switch (intChoice)
+        {
+            case 1:
+                MainLoopFunctions::sayHello();
+                break;
+            case 2:
+                //MainLoopFunctions::viewVectorEntry(components[0]);
+                //MainLoopFunctions::viewVectorEntry(components[1]);
+                MainLoopFunctions::viewComponent(components["T001"]);
+                break;
+            case 3:
+                //do some stuff
+                break;
+        }
+
+
+
     }
-    //vector<unique_ptr<AircraftComponent>> components;
 
-    //vector<string> cars;
 
-    //components.push_back(make_unique<TemperatureSensor>("T001", "Temperature Sensor 1", 50, 150));
-    //components.push_back(make_unique<PressureSensor>("P001", "Pressure Sensor 1", 100, 300));
-
-    //for (const auto& component : components)
-    //{
-    //    cout << "\nAircraft Component Monitoring";
-
-    //    component->getReading();
-    //    component->displayInfo();
-    //}
 
     //return 0;
 
