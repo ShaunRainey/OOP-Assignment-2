@@ -14,10 +14,10 @@ TemperatureSensor::TemperatureSensor(string id, string name, double minTemp, dou
 
     if (minTemperature >= maxTemperature)
     {
-        throw "Invalid threshold temperatures";
+        throw "\nInvalid threshold temperatures\n";
     }
 
-    cout << "Temperature sensor created!" << endl;
+    cout << "\nTemperature sensor created!\n";
 }
 
 void TemperatureSensor::generateReading()
@@ -41,7 +41,7 @@ string TemperatureSensor::getReading() const
 {
     if (!hasReading)
     {
-        return "No valid reading currently held";
+        return "\nNo valid reading currently held\n";
     }
     return to_string(currentTemperature);
 }
@@ -49,6 +49,27 @@ string TemperatureSensor::getReading() const
 double TemperatureSensor::getMaxTemp() const
 {
     return maxTemperature;
+}
+
+void TemperatureSensor::setMaxTemp()
+{
+    double newTemp;
+    cout << "\nEnter a new value: ";
+    cin >> newTemp;
+
+    if (newTemp > minTemperature && newTemp > currentTemperature)
+    {
+        maxTemperature = newTemp;
+        cout << "\nMaximum temperature successfully updated.\n";
+    }
+    else if (newTemp < currentTemperature)
+    {
+        cout << "\nNew maximum temperature cannot be less than the current temperature reading.\n";
+    }
+    else
+    {
+        cout << "\nMaximum temperature cannot be lower than the minimum permitted temperature.\n";
+    }
 }
 
 double TemperatureSensor::getMinTemp() const
@@ -59,15 +80,21 @@ double TemperatureSensor::getMinTemp() const
 void TemperatureSensor::setMinTemp()
 {
     double newTemp;
-    cout << "Enter a new value: ";
+    cout << "\nEnter a new value: ";
     cin >> newTemp;
 
-    if (newTemp > maxTemperature) {
-        cout << "\nMinimum temperature cannot be higher than the max permitted temperature.\n";
+    if (newTemp < maxTemperature && newTemp < currentTemperature) 
+    {
+        minTemperature = newTemp;
+        cout << "\nMinimum temperature successfully updated.\n";
+    }
+    else if (newTemp < currentTemperature) 
+    {
+        cout << "\nNew minimum temperature cannot be greater than the current temperature reading.\n";
     }
     else
     {
-        minTemperature = newTemp;
+        cout << "\nMinimum temperature cannot be higher than the max permitted temperature.\n";
     }
 }
 

@@ -10,18 +10,14 @@ class MainLoopFunctions
 {
 public:
 
-	static void sayHello()
-	{
-		cout << "\n Hello" << endl;
-	};
-
 	static void presentMenu()
 	{
-		cout << "\nPlease select an option from the menu (0 to quit program): " << endl;
-		cout << "1) A" << endl;
-		cout << "2) B" << endl;
-		cout << "3) C" << endl;
-		cout << "0) Game over" << endl;
+		cout << "\nPlease select an option from the menu (0 to quit program): \n";
+		cout << "\n1) View all temperature sensors";
+		cout << "\n2) Add new temperature sensor";
+		cout << "\n3) Update temperature sensor minimum threshold value";
+		cout << "\n4) Update temperature sensor maximum threshold value";
+		cout << "\n0) Game over\n";
 	}
 
 	static bool validateChoice(string input)
@@ -36,19 +32,73 @@ public:
 
 		catch (...)
 		{
-			cout << "\nChoice not valid, please try again." << endl;
+			cout << "\nChoice not valid, please try again.\n";
 		}
 
 		return isValid;
 	}
 
-	static void viewComponent(const unique_ptr<AircraftComponent>& component)
+	static void displayAllTempSensors(unordered_map<string, TemperatureSensor> temperatureSensors)
 	{
-		component->displayInfo();
+		for (const auto& sensor : temperatureSensors)
+		{
+			sensor.second.displayInfo();
+		}
 	}
 
+	static void addNewTempSensor(TemperatureSensor newSensor, unordered_map<string, TemperatureSensor>& temperatureSensors) 
+	{
+		if (temperatureSensors.count(newSensor.getComponentID()) == 1) {
+			cout << "Component with this ID already exists.";
+		}
+		else
+		{
+			temperatureSensors.emplace(newSensor.getComponentID(), newSensor);
+			cout << temperatureSensors.size();
+		}
+	}
 
+	static TemperatureSensor createTempSensor()
+	{
+		string componentID;
+		string componentName;
+		double minTemperature;
+		double maxTemperature;
 
+		cout << "\nEnter component ID: ";
+		cin >> componentID;
+
+		cout << "\nEnter component name: ";
+		cin >> componentName;
+
+		cout << "\nEnter component minimum temperature: ";
+		cin >> minTemperature;
+
+		cout << "\nEnter component maximum temperature: ";
+		cin >> maxTemperature;
+
+		return TemperatureSensor(componentID, componentName, minTemperature, maxTemperature);
+	}
+
+	static void deleteTemperatureSensor(unordered_map<string, TemperatureSensor>& temperatureSensors)
+	{
+		string componentID;
+
+		cout << "\nEnter the ID of the component you wish to update: ";
+		cin >> componentID;
+
+		if (temperatureSensors.count(componentID) == 1)
+		{
+			temperatureSensors.at(componentID).displayInfo();
+			temperatureSensors.erase(componentID);
+
+			cout << "\nComponent with ID: " << componentID << " has been deleted.\n";
+		}
+		else
+		{
+			cout << "\nComponent ID not found\n";
+		}
+	}
 };
 
 #endif

@@ -24,15 +24,8 @@ int main()
 {
     bool exit = false;
 
-    //vector<unique_ptr<AircraftComponent>> components;
-
-    //components.push_back(make_unique<TemperatureSensor>("T001", "Temperature Sensor 1", 50, 150));
-    //components.push_back(make_unique<PressureSensor>("P001", "Pressure Sensor 1", 100, 300));
-
-    unordered_map<string, unique_ptr<AircraftComponent>> components;
-
-    components["T001"] = make_unique<TemperatureSensor>("T001", "Temperature Sensor 1", 50, 150);
-    //components["P001"] = make_unique<PressureSensor>("P001", "Pressure Sensor 1", 0, 200);
+    unordered_map<string, TemperatureSensor> tempSensors;
+    tempSensors.emplace("T001", TemperatureSensor("T001", "Temperature Sensor 1", 20, 170));
 
     while (exit == false)
     {
@@ -49,24 +42,55 @@ int main()
         }
 
         int intChoice = stoi(choice);
+        string componentID;
 
         switch (intChoice)
         {
             case 1:
-                MainLoopFunctions::sayHello();
+                MainLoopFunctions::displayAllTempSensors(tempSensors);
                 break;
+
             case 2:
-                //MainLoopFunctions::viewVectorEntry(components[0]);
-                //MainLoopFunctions::viewVectorEntry(components[1]);
-                MainLoopFunctions::viewComponent(components["T001"]);
+            {
+                TemperatureSensor newSensor = MainLoopFunctions::createTempSensor();
+                MainLoopFunctions::addNewTempSensor(newSensor, tempSensors);
                 break;
+            }
+
             case 3:
-                //do some stuff
+                cout << "Enter the ID of the component you wish to update: ";
+                cin >> componentID;
+
+                if (tempSensors.count(componentID) == 1)
+                {
+                    tempSensors.at(componentID).displayInfo();
+                    tempSensors.at(componentID).setMinTemp();
+                }
+                else
+                {
+                    cout << "\nComponent ID not found.\n" << endl;
+                }
+                break;
+
+            case 4:
+                cout << "Enter the ID of the component you wish to update: ";
+                cin >> componentID;
+
+                if (tempSensors.count(componentID) == 1)
+                {
+                    tempSensors.at(componentID).displayInfo();
+                    tempSensors.at(componentID).setMaxTemp();
+                }
+                else
+                {
+                    cout << "\nComponent ID not found.\n" << endl;
+                }
+                break;
+
+            case 5:
+                MainLoopFunctions::deleteTemperatureSensor(tempSensors);
                 break;
         }
-
-
-
     }
 
 

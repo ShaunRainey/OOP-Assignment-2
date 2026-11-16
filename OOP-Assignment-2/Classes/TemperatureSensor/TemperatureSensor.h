@@ -16,6 +16,7 @@ public:
     string getReading() const override;
     void displayInfo() const override;
     double getMaxTemp() const;
+    void setMaxTemp();
     double getMinTemp() const;
     void setMinTemp();
 
