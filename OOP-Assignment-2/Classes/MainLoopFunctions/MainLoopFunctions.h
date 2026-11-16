@@ -3,6 +3,7 @@
 
 #include <string>
 #include "../AircraftComponent/AircraftComponent.h"
+#include <conio.h>
 
 using namespace std;
 
@@ -17,7 +18,9 @@ public:
 		cout << "\n2) Add new temperature sensor";
 		cout << "\n3) Update temperature sensor minimum threshold value";
 		cout << "\n4) Update temperature sensor maximum threshold value";
-		cout << "\n0) Game over\n";
+		cout << "\n5) Update temperature reading";
+		cout << "\n6) Delete temperature sensor";
+		cout << "\n0) Exit program\n";
 	}
 
 	static bool validateChoice(string input)
@@ -98,6 +101,14 @@ public:
 		{
 			cout << "\nComponent ID not found\n";
 		}
+	}
+
+	static void clearScreen()
+	{
+		cout << "\nPress any key to continue...";
+		_getch();
+
+		system("cls");
 	}
 };
 

@@ -7,7 +7,7 @@ AircraftComponent::AircraftComponent(string id, string name)
 {
     componentID = id;
     componentName = name;
-    isOnline = true;
+    health = "Healthy";
     needsMaintenance = false;
 }
 
@@ -21,9 +21,9 @@ std::string AircraftComponent::getComponentName() const
     return componentName;
 }
 
-void AircraftComponent::setFunctioning(bool status)
+void AircraftComponent::setFunctioning(string status)
 {
-    isOnline = status;
+    health = status;
 }
 
 void AircraftComponent::setNeedsMaintenance(bool required)
@@ -33,17 +33,17 @@ void AircraftComponent::setNeedsMaintenance(bool required)
 
 std::string AircraftComponent::healthStatus() const
 {
-    if (!isOnline)
-    {
-        return "Offline";
-    }
+    //if (!isOnline)
+    //{
+    //    return "Offline";
+    //}
 
-    if (needsMaintenance)
-    {
-        return "Needs Maintenance";
-    }
+    //if (needsMaintenance)
+    //{
+    //    return "Needs Maintenance";
+    //}
 
-    return "Healthy";
+    return health;
 }
 
 //void AircraftComponent::displayInfo() const

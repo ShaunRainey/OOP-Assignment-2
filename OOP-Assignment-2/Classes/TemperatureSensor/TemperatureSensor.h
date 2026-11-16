@@ -12,7 +12,7 @@ public:
     TemperatureSensor(string id, string name, double minTemp, double maxTemp);
 
     void generateReading() override;
-    bool checkReading() const override;
+    void healthCheck() override;
     string getReading() const override;
     void displayInfo() const override;
     double getMaxTemp() const;

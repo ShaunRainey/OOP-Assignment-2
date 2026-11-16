@@ -27,14 +27,28 @@ void TemperatureSensor::generateReading()
     hasReading = true;
 }
 
-bool TemperatureSensor::checkReading() const
+void TemperatureSensor::healthCheck()
 {
     if (!hasReading)
     {
-        return false;
+        cout << "\nNo reading currently present.\n";
+        return;
     }
 
-    return currentTemperature >= minTemperature && currentTemperature <= maxTemperature;
+    if (currentTemperature > minTemperature && currentTemperature < maxTemperature) 
+    {
+        setFunctioning("Healthy");
+    }
+    else if (currentTemperature < minTemperature)
+    {
+        cout << "WARNING: Current temperature is beneath minimum threshold!";
+        setFunctioning("Min threshold breached");
+    }
+    else
+    {
+        cout << "WARNING: Current temperature is above maximum threshold!";
+        setFunctioning("Max threshold breached");
+    }
 }
 
 string TemperatureSensor::getReading() const

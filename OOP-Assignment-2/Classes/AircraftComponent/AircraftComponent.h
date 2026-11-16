@@ -16,11 +16,11 @@ public:
     string getComponentID() const;
     string getComponentName() const;
 
-    void setFunctioning(bool status);
+    void setFunctioning(string status);
     void setNeedsMaintenance(bool required);
 
     virtual void generateReading() = 0;
-    virtual bool checkReading() const = 0;
+    virtual void healthCheck() = 0;
     virtual string getReading() const = 0;
     virtual void displayInfo() const = 0;
 
@@ -29,7 +29,7 @@ public:
 private:
     string componentID;
     string componentName;
-    bool isOnline;
+    string health;
     bool needsMaintenance;
 };
 

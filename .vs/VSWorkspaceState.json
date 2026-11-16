@@ -4,9 +4,10 @@
     "\\OOP-Assignment-2",
     "\\OOP-Assignment-2\\Classes",
     "\\OOP-Assignment-2\\Classes\\AircraftComponent",
+    "\\OOP-Assignment-2\\Classes\\MainLoopFunctions",
     "\\OOP-Assignment-2\\Classes\\PressureSensor",
     "\\OOP-Assignment-2\\Classes\\TemperatureSensor"
   ],
-  "SelectedNode": "\\OOP-Assignment-2\\Classes\\AircraftComponent\\AircraftComponent.cpp",
+  "SelectedNode": "\\OOP-Assignment-2\\Classes\\MainLoopFunctions\\MainLoopFunctions.cpp",
   "PreviewInSolutionExplorer": false
 }

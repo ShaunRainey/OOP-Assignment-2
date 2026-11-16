@@ -13,13 +13,6 @@
 
 using namespace std;
 
-enum SensorStatus
-{
-    Online,
-    Offline,
-    Error
-};
-
 int main()
 {
     bool exit = false;
@@ -48,12 +41,14 @@ int main()
         {
             case 1:
                 MainLoopFunctions::displayAllTempSensors(tempSensors);
+                MainLoopFunctions::clearScreen();
                 break;
 
             case 2:
             {
                 TemperatureSensor newSensor = MainLoopFunctions::createTempSensor();
                 MainLoopFunctions::addNewTempSensor(newSensor, tempSensors);
+                MainLoopFunctions::clearScreen();
                 break;
             }
 
@@ -65,11 +60,13 @@ int main()
                 {
                     tempSensors.at(componentID).displayInfo();
                     tempSensors.at(componentID).setMinTemp();
+                    tempSensors.at(componentID).healthCheck();
                 }
                 else
                 {
                     cout << "\nComponent ID not found.\n" << endl;
                 }
+                MainLoopFunctions::clearScreen();
                 break;
 
             case 4:
@@ -80,15 +77,35 @@ int main()
                 {
                     tempSensors.at(componentID).displayInfo();
                     tempSensors.at(componentID).setMaxTemp();
+                    tempSensors.at(componentID).healthCheck();
                 }
                 else
                 {
                     cout << "\nComponent ID not found.\n" << endl;
                 }
+                MainLoopFunctions::clearScreen();
                 break;
 
             case 5:
+                cout << "Enter the ID of the component you wish to update: ";
+                cin >> componentID;
+
+                if (tempSensors.count(componentID) == 1)
+                {
+                    tempSensors.at(componentID).displayInfo();
+                    tempSensors.at(componentID).generateReading();
+                    tempSensors.at(componentID).healthCheck();
+                }
+                else
+                {
+                    cout << "\nComponent ID not found.\n" << endl;
+                }
+                MainLoopFunctions::clearScreen();
+                break;
+
+            case 6:
                 MainLoopFunctions::deleteTemperatureSensor(tempSensors);
+                MainLoopFunctions::clearScreen();
                 break;
         }
     }
