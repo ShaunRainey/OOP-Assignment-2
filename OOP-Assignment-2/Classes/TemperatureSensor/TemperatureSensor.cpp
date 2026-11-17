@@ -22,8 +22,17 @@ TemperatureSensor::TemperatureSensor(string id, string name, double minTemp, dou
 
 void TemperatureSensor::generateReading()
 {
+    double number; 
+
     cout << "\nPlease enter current temperature (Celcius): ";
-    cin >> currentTemperature;
+    while (!(cin >> number))
+    {
+        cout << "\nInvalid\n";
+        cin.clear();
+        cin.ignore(10000, '\n');
+    }
+
+    //cin >> currentTemperature;
     hasReading = true;
 }
 

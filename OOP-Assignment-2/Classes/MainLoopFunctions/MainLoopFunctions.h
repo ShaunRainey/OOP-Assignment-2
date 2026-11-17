@@ -11,16 +11,26 @@ class MainLoopFunctions
 {
 public:
 
-	static void presentMenu()
+	static void presentSensorMenu()
 	{
 		cout << "\nPlease select an option from the menu (0 to quit program): \n";
-		cout << "\n1) View all temperature sensors";
-		cout << "\n2) Add new temperature sensor";
-		cout << "\n3) Update temperature sensor minimum threshold value";
-		cout << "\n4) Update temperature sensor maximum threshold value";
-		cout << "\n5) Update temperature reading";
-		cout << "\n6) Delete temperature sensor";
-		cout << "\n0) Exit program\n";
+		cout << "\n0. Exit program\n";
+		cout << "\n1. Temperature sensors";
+		cout << "\n2. Pressure sensors";
+		cout << "\n";
+	}
+
+	static void presentMainMenu()
+	{
+		cout << "\nPlease select an option from the menu (0 to quit program): \n";
+		cout << "\n0. Exit program\n";
+		cout << "\n1. View all sensors";
+		cout << "\n2. Add new sensor";
+		cout << "\n3. Update sensor minimum threshold value";
+		cout << "\n4. Update sensor maximum threshold value";
+		cout << "\n5. Update reading";
+		cout << "\n6. Delete sensor";
+		cout << "\n";
 	}
 
 	static bool validateChoice(string input)
