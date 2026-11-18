@@ -45,12 +45,3 @@ std::string AircraftComponent::healthStatus() const
 
     return health;
 }
-
-//void AircraftComponent::displayInfo() const
-//{
-//    std::cout << "Component ID: " << componentID << std::endl;
-//    std::cout << "ComponentName: " << componentName << std::endl;
-//    std::cout << "Health status: " << healthStatus() << std::endl;
-//    std::cout << "Reading: " << getReadingDescription()
-//        << ": " << checkReading() << std::endl;
-//}

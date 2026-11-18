@@ -2,7 +2,6 @@
 #define AIRCRAFTCOMPONENT_H
 
 #include <string>
-//#include "SensorStatus.h"
 
 using namespace std;
 
