@@ -1,6 +1,7 @@
 #include "TemperatureSensor.h"
 #include <iostream>
 
+
 #include "../AircraftComponent/AircraftComponent.h"
 
 using namespace std;
@@ -25,15 +26,23 @@ void TemperatureSensor::generateReading()
     double number; 
 
     cout << "\nPlease enter current temperature (Celcius): ";
+
     while (!(cin >> number))
     {
-        cout << "\nInvalid\n";
+        cout << "\nInvalid input type, please try again\n";
         cin.clear();
         cin.ignore(10000, '\n');
     }
 
-    //cin >> currentTemperature;
-    hasReading = true;
+    if (number > minTemperature && number < maxTemperature)
+    {
+        currentTemperature = number;
+        hasReading = true;
+    }
+    else
+    {
+        cout << "Value is beyond permissable thresholds";
+    }
 }
 
 void TemperatureSensor::healthCheck()
@@ -77,8 +86,15 @@ double TemperatureSensor::getMaxTemp() const
 void TemperatureSensor::setMaxTemp()
 {
     double newTemp;
-    cout << "\nEnter a new value: ";
-    cin >> newTemp;
+
+    cout << "\nPlease enter new maximum temperature threshold (Celcius): ";
+
+    while (!(cin >> newTemp))
+    {
+        cout << "\nInvalid input type, please try again\n";
+        cin.clear();
+        cin.ignore(10000, '\n');
+    }
 
     if (newTemp > minTemperature && newTemp > currentTemperature)
     {
@@ -103,15 +119,22 @@ double TemperatureSensor::getMinTemp() const
 void TemperatureSensor::setMinTemp()
 {
     double newTemp;
-    cout << "\nEnter a new value: ";
-    cin >> newTemp;
+
+    cout << "\nPlease enter new minimum temperature threshold (Celcius): ";
+
+    while (!(cin >> newTemp))
+    {
+        cout << "\nInvalid input type, please try again\n";
+        cin.clear();
+        cin.ignore(10000, '\n');
+    }
 
     if (newTemp < maxTemperature && newTemp < currentTemperature) 
     {
         minTemperature = newTemp;
         cout << "\nMinimum temperature successfully updated.\n";
     }
-    else if (newTemp < currentTemperature) 
+    else if (newTemp > currentTemperature) 
     {
         cout << "\nNew minimum temperature cannot be greater than the current temperature reading.\n";
     }
@@ -127,6 +150,6 @@ void TemperatureSensor::displayInfo() const
     cout << "\nComponentName: " << getComponentName();
     cout << "\nHealth status: " << healthStatus();
     cout << "\nCurrent reading: " << getReading();
-    cout << "\nMax permitted temperature:" << getMaxTemp();
-    cout << "\nMin permitted temperature:" << getMinTemp() << "\n";
+    cout << "\nMin permitted temperature:" << getMinTemp();
+    cout << "\nMax permitted temperature:" << getMaxTemp() << "\n";
 }

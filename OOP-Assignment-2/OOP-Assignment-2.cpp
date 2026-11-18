@@ -18,7 +18,7 @@ int main()
     bool exit = false;
 
     unordered_map<string, TemperatureSensor> tempSensors;
-    tempSensors.emplace("T001", TemperatureSensor("T001", "Temperature Sensor 1", 20, 170));
+    tempSensors.emplace("T001", TemperatureSensor("T001", "Temperature Sensor 1", 10, 170));
 
     while (exit == false)
     {
@@ -38,8 +38,11 @@ int main()
             MainLoopFunctions::presentMainMenu();
             cout << "\n";
             cin >> choice;
-            //create a makechoice function that contains validation`
-            MainLoopFunctions::validateChoice(choice);
+
+            while (!MainLoopFunctions::validateChoice(choice))
+            {
+                cin >> choice;
+            }
 
             int intChoice = stoi(choice);
             string componentID;
@@ -53,8 +56,14 @@ int main()
 
                 case 2:
                 {
-                    TemperatureSensor newSensor = MainLoopFunctions::createTempSensor();
-                    MainLoopFunctions::addNewTempSensor(newSensor, tempSensors);
+                    optional<TemperatureSensor> newSensor = MainLoopFunctions::createTempSensor();
+
+                    if (!newSensor.has_value())
+                    {
+                        break;
+                    }
+
+                    MainLoopFunctions::addNewTempSensor(newSensor.value(), tempSensors);
                     MainLoopFunctions::clearScreen();
                     break;
                 }
@@ -122,22 +131,8 @@ int main()
         }
         else
         {
-            cout << "Invalid choice, please try again";
+            cout << "\nInvalid choice, please try again\n";
+            MainLoopFunctions::clearScreen();
         }
-
-
-
-        //if (choice == "0" || sensorChoice == "0")
-        //{
-        //    exit = true;
-        //}
-
-        //
-    }
-
-
-
-    //return 0;
-
-    
+    } 
 }

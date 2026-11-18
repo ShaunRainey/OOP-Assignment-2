@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OOP-Assignment-2\\Classes\\TemperatureSensor\\TemperatureSensor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\OOP-Assignment-2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OOP-Assignment-2\\OOP-Assignment-2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\Classes\\MainLoopFunctions\\MainLoopFunctions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OOP-Assignment-2\\Classes\\MainLoopFunctions\\MainLoopFunctions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\OOP-Assignment-2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OOP-Assignment-2\\OOP-Assignment-2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\Classes\\AircraftComponent\\AircraftComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,13 +38,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MainLoopFunctions.h",
               "DocumentMoniker": "C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\Classes\\MainLoopFunctions\\MainLoopFunctions.h",
               "RelativeDocumentMoniker": "OOP-Assignment-2\\Classes\\MainLoopFunctions\\MainLoopFunctions.h",
               "ToolTip": "C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\Classes\\MainLoopFunctions\\MainLoopFunctions.h",
               "RelativeToolTip": "OOP-Assignment-2\\Classes\\MainLoopFunctions\\MainLoopFunctions.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAF8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-11-16T12:57:32.9Z",
               "EditorCaption": ""
@@ -71,8 +71,7 @@
               "RelativeToolTip": "OOP-Assignment-2\\Classes\\AircraftComponent\\AircraftComponent.h",
               "ViewState": "AgIAAA4AAAAAAAAAAAAcwBUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-11-16T12:13:39.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-16T12:13:39.51Z"
             },
             {
               "$type": "Document",
@@ -82,7 +81,7 @@
               "RelativeDocumentMoniker": "OOP-Assignment-2\\Classes\\TemperatureSensor\\TemperatureSensor.h",
               "ToolTip": "C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\Classes\\TemperatureSensor\\TemperatureSensor.h",
               "RelativeToolTip": "OOP-Assignment-2\\Classes\\TemperatureSensor\\TemperatureSensor.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-11-15T22:56:48.839Z",
               "EditorCaption": ""
@@ -95,20 +94,20 @@
               "RelativeDocumentMoniker": "OOP-Assignment-2\\Classes\\TemperatureSensor\\TemperatureSensor.cpp",
               "ToolTip": "C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\Classes\\TemperatureSensor\\TemperatureSensor.cpp",
               "RelativeToolTip": "OOP-Assignment-2\\Classes\\TemperatureSensor\\TemperatureSensor.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-11-15T18:15:20.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "OOP-Assignment-2.cpp",
               "DocumentMoniker": "C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\OOP-Assignment-2.cpp",
               "RelativeDocumentMoniker": "OOP-Assignment-2\\OOP-Assignment-2.cpp",
               "ToolTip": "C:\\Users\\Coding\\source\\repos\\OOP-Assignment-2\\OOP-Assignment-2\\OOP-Assignment-2.cpp",
               "RelativeToolTip": "OOP-Assignment-2\\OOP-Assignment-2.cpp",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAAACwAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAArwD0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-11-15T14:39:42.973Z",
               "EditorCaption": ""

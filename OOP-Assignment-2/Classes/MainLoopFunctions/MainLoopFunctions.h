@@ -4,6 +4,7 @@
 #include <string>
 #include "../AircraftComponent/AircraftComponent.h"
 #include <conio.h>
+#include <optional>
 
 using namespace std;
 
@@ -45,7 +46,7 @@ public:
 
 		catch (...)
 		{
-			cout << "\nChoice not valid, please try again.\n";
+			cout << "\nInvalid choice. Please enter a number: \n";
 		}
 
 		return isValid;
@@ -71,7 +72,7 @@ public:
 		}
 	}
 
-	static TemperatureSensor createTempSensor()
+	static optional<TemperatureSensor> createTempSensor()
 	{
 		string componentID;
 		string componentName;
@@ -85,10 +86,26 @@ public:
 		cin >> componentName;
 
 		cout << "\nEnter component minimum temperature: ";
-		cin >> minTemperature;
+		while (!(cin >> minTemperature))
+		{
+			cout << "\nInvalid input. Please enter a numerical value: ";
+			cin.clear();
+			cin.ignore(10000, '\n');
+		}
 
 		cout << "\nEnter component maximum temperature: ";
-		cin >> maxTemperature;
+		while (!(cin >> maxTemperature))
+		{
+			cout << "\nInvalid input. Please enter a numerical value: ";
+			cin.clear();
+			cin.ignore(10000, '\n');
+		}
+
+		if (minTemperature >= maxTemperature)
+		{
+			cout << "\nInvalid temperature thresholds. Sensor creation cancelled.\n";
+			return nullopt;
+		}
 
 		return TemperatureSensor(componentID, componentName, minTemperature, maxTemperature);
 	}
